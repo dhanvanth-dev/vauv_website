@@ -1,0 +1,357 @@
+.hero-circle.is--1 {
+    animation: scaleAnimation 4s infinite ease-in-out;
+}
+
+.hero-circle.is--2 {
+    animation: scaleAnimation 4s infinite ease-in-out;
+    animation-delay: 0.4s;
+}
+
+.hero-circle.is--3 {
+    animation: scaleAnimation 4s infinite ease-in-out;
+    animation-delay: 0.8s;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        transform: scale(10);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+body {
+    cursor: none;
+}
+
+@keyframes growY {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes growX {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes rotate-cursor {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cursor-block,
+.cursor-icon,
+.cursor-inner.is--p,
+.cursor-inner.is--dot {
+    transition: opacity 0.4s ease, display 0s linear 0.4s;
+}
+
+.cursor-wrap,
+.cursor-block,
+.cursor-border {
+    transition: width 0.4s linear, height 0.4s linear;
+}
+
+.w-nav-button.w--open {
+    background-color: transparent !important;
+}
+
+.cross-icon:hover .cross-svg {
+    transform: rotateZ(180deg);
+}
+
+.cross-svg {
+    transition: transform 0.5s ease-in-out;
+    pointer-events: none;
+    /* Ensures that the element does not capture mouse events */
+}
+
+.cross-icon {
+    pointer-events: auto;
+    /* Ensures that the element does not capture mouse events */
+}
+
+@keyframes pulseAnimation {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        /* Start and end with the original scale and full opacity */
+    }
+
+    50% {
+        opacity: 0.2;
+        transform: scale(0.95);
+        /* Scale down a bit and reduce opacity in the middle of the animation */
+    }
+}
+
+.pulse {
+    animation: pulseAnimation 1s infinite;
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.steps-block {
+    transition: height 0.5s ease, width 0.5s ease, transform 0.5s ease;
+    /* Add height transition */
+}
+
+@media (min-width: 767px) {
+    .steps-block:hover {
+        height: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* For screens 767px and below, define a class that makes width 100% */
+    .steps-block.width-full {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* For screens between 768px and 991px, define a class that makes height 100% */
+    .steps-block.height-full {
+        height: 100%;
+    }
+}
+
+.page-wrapper {
+    overflow: clip;
+}
+
+@media (min-width: 768px) {
+    .has--underline {
+        position: relative;
+        display: inline-block;
+        /* This makes sure the underline fits the content */
+        overflow: hidden;
+        /* Ensures the pseudo-element doesn't overflow the container */
+    }
+
+    .has--underline::after {
+        content: "";
+        /* Required for a pseudo-element */
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        /* Adjust if you want the underline to be positioned differently */
+        width: 0%;
+        /* Start width */
+        height: 0.75px;
+        /* Height of the underline */
+        background-color: currentColor;
+        /* Makes the underline the same color as the text; change as needed */
+        transition: width 0.3s ease-in-out;
+        /* Smooth transition for the growing effect */
+    }
+
+    .has--underline:hover::after,
+    .has--underline:focus::after {
+        width: 100%;
+        /* End width - makes the underline grow to full width on hover/focus */
+    }
+}
+
+.footer_block-designer p {
+    position: relative !important;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.footer_block-designer p::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    /* Use your preferred color */
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.footer_block-designer:hover p::after {
+    width: 100%;
+}
+
+input {
+    border: none !important;
+    /* Removes the default border */
+    outline: none;
+    /* Removes the focus outline */
+}
+
+input:focus,
+input:active {
+    outline: none;
+    box-shadow: none;
+    /* Optionally removes the box-shadow if there is one */
+}
+
+textarea {
+    border: none !important;
+    /* Removes the default border */
+    outline: none;
+    /* Removes the focus outline */
+    resize: none;
+    /* Disables resizing */
+}
+
+textarea:focus,
+textarea:active {
+    outline: none;
+    box-shadow: none;
+    /* Optionally removes the box-shadow if there is one */
+}
+
+/* For WebKit browsers like Chrome and Safari */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #ffffff !important;
+    transition: opacity 0.3s ease !important;
+}
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+    opacity: 0.3 !important;
+}
+
+/* For Mozilla Firefox */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+    opacity: 0.3 !important;
+}
+
+/* For Internet Explorer and Microsoft Edge */
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #ffffff !important;
+}
+
+/* For the modern version of Microsoft Edge */
+::placeholder {
+    color: #ffffff !important;
+    transition: opacity 0.3s ease !important;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    opacity: 0.3 !important;
+}
+
+.w-input,
+.w-select {
+    color: #ffffff !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 0;
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+    background: -webkit-linear-gradient(top,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(0, 174, 255, 0.04) 50%,
+            rgba(255, 255, 255, 0) 51%,
+            rgba(0, 174, 255, 0.03) 100%);
+}
+
+@keyframes animate-svg-stroke {
+    from {
+        stroke-dashoffset: var(--path-length);
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.draw-animation path {
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: var(--path-length);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.image-wrapper img {
+    transition: clip-path 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Custom cubic bezier curve */
+    clip-path: inset(0 100% 0 0);
+    /* Initially hide the image */
+}
+
+.navbar {
+    transition: backdrop-filter 0.8s ease;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html,
+body {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
