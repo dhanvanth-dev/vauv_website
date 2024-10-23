@@ -36,6 +36,42 @@ This project is a website for VAUV (Vit Autonomous Underwater Vehicle), an under
 4. **Sponsors**: Highlights the sponsors supporting the team
 5. **Contact**: Allows visitors to get in touch with the team
 
-## Customization
 
-The website uses custom CSS variables for easy color scheme adjustments:
+## Responsive Design
+
+The website is fully responsive with specific styles for different screen sizes:
+
+- Desktop: Default styles
+- Tablet: Styles apply for screens up to 991px wide
+- Mobile: Styles apply for screens up to 767px wide
+
+## Setup and Deployment
+
+1. Clone the repository to your local machine
+2. Open `index.html` in a web browser to view the site locally
+3. To deploy, upload all files to your web hosting service
+
+## Future Improvements
+
+- Add more interactive elements to the Projects section
+- Implement a blog or news section for team updates
+- Enhance accessibility features
+- Optimize images and assets for faster loading times
+
+## Contributing
+
+Contributions to improve the website are welcome. Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
+
+## Contact
+
+VAUV Team
